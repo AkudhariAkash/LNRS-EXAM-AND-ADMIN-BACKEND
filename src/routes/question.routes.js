@@ -25,15 +25,18 @@ router.get('/', protect, admin, async (req, res) => {
 // Create new question (admin only)
 router.post('/', protect, admin, async (req, res) => {
   try {
-    const { section, description , options, answer, testCases } = req.body;
+    const { section, text, options, answer, testCases } = req.body;
 
-    // Validation based on the section type
+    if (!text) {
+      return res.status(400).json({ success: false, message: 'Question text is required.' });
+    }
+
     if (['mcqs', 'aptitude', 'ai'].includes(section)) {
       if (!options || options.length !== 4) {
         return res.status(400).json({ success: false, message: 'Options must have exactly 4 choices.' });
       }
       if (!answer) {
-        return res.status(400).json({ success: false, message: 'Answer is required for MCQs, AI, and Aptitude.' });
+        return res.status(400).json({ success: false, message: 'Answer is required.' });
       }
     }
 
@@ -52,15 +55,6 @@ router.post('/', protect, admin, async (req, res) => {
     res.status(201).json({ success: true, data: question });
   } catch (err) {
     console.error(err);
-
-    if (err.name === 'ValidationError') {
-      const errors = Object.values(err.errors).map((error) => ({
-        field: error.path,
-        message: error.message,
-      }));
-      return res.status(400).json({ success: false, message: 'Validation failed', errors });
-    }
-
     res.status(500).json({ success: false, message: 'Server error, please try again later.' });
   }
 });
@@ -81,13 +75,12 @@ router.put('/:id', protect, admin, async (req, res) => {
 
     const { section, options, answer, testCases } = req.body;
 
-    // Validation for updates based on the section type
     if (['mcqs', 'aptitude', 'ai'].includes(section)) {
       if (options && options.length !== 4) {
         return res.status(400).json({ success: false, message: 'Options must have exactly 4 choices.' });
       }
       if (!answer) {
-        return res.status(400).json({ success: false, message: 'Answer is required for MCQs, AI, and Aptitude.' });
+        return res.status(400).json({ success: false, message: 'Answer is required.' });
       }
     }
 
@@ -103,15 +96,6 @@ router.put('/:id', protect, admin, async (req, res) => {
     res.json({ success: true, data: question });
   } catch (err) {
     console.error(err);
-
-    if (err.name === 'ValidationError') {
-      const errors = Object.values(err.errors).map((error) => ({
-        field: error.path,
-        message: error.message,
-      }));
-      return res.status(400).json({ success: false, message: 'Validation failed', errors });
-    }
-
     res.status(500).json({ success: false, message: 'Server error, please try again later.' });
   }
 });
