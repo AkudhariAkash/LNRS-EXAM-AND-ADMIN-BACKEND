@@ -266,3 +266,48 @@
 [2025-01-29T18:29:35.291Z] info: Connected to MongoDB
 [2025-01-29T18:42:28.801Z] info: API is running on port 5000
 [2025-01-29T18:42:36.485Z] info: Connected to MongoDB
+[2025-01-30T04:06:10.157Z] info: API is running on port 5000
+[2025-01-30T04:06:12.767Z] info: Connected to MongoDB
+[2025-01-30T04:51:35.550Z] info: API is running on port 5000
+[2025-01-30T04:52:07.743Z] error: Error connecting to MongoDB:
+[2025-01-30T04:53:50.280Z] info: API is running on port 5000
+[2025-01-30T04:53:51.216Z] info: Connected to MongoDB
+[2025-01-30T08:50:45.864Z] info: API is running on port 5000
+[2025-01-30T08:50:47.382Z] info: Connected to MongoDB
+[2025-01-30T12:55:03.638Z] info: API is running on port 5000
+[2025-01-30T12:55:04.326Z] info: Connected to MongoDB
+[2025-01-30T17:32:59.784Z] info: API is running on port 5000
+[2025-01-30T17:33:32.967Z] error: Error connecting to MongoDB:
+[2025-01-30T17:34:13.249Z] info: API is running on port 5000
+[2025-01-30T17:34:14.225Z] info: Connected to MongoDB
+[2025-01-31T03:41:30.101Z] info: API is running on port 5000
+[2025-01-31T03:41:31.338Z] info: Connected to MongoDB
+[2025-01-31T03:58:17.170Z] info: MongoDB connection closed due to app termination
+[2025-01-31T03:58:22.533Z] info: API is running on port 5000
+[2025-01-31T03:58:52.721Z] error: Error connecting to MongoDB:
+[2025-01-31T03:59:59.536Z] info: API is running on port 5000
+[2025-01-31T04:00:00.760Z] info: Connected to MongoDB
+[2025-01-31T08:43:40.135Z] info: API is running on port 5000
+[2025-01-31T08:43:40.657Z] info: Connected to MongoDB
+[2025-01-31T10:29:29.393Z] info: API is running on port 5000
+[2025-01-31T10:29:30.926Z] info: Connected to MongoDB
+[2025-01-31T18:35:09.209Z] info: API is running on port 5000
+[2025-01-31T18:35:11.098Z] info: Connected to MongoDB
+[2025-01-31T19:48:30.505Z] info: API is running on port 5000
+[2025-01-31T19:49:03.062Z] error: Error connecting to MongoDB:
+[2025-01-31T19:49:53.140Z] info: API is running on port 5000
+[2025-01-31T19:49:54.994Z] info: Connected to MongoDB
+[2025-02-01T15:02:54.536Z] info: API is running on port 5000
+[2025-02-01T15:03:24.877Z] error: Error connecting to MongoDB:
+[2025-02-01T15:03:39.184Z] info: API is running on port 5000
+[2025-02-01T15:03:45.293Z] info: Connected to MongoDB
+[2025-02-04T03:39:57.371Z] info: API is running on port 5000
+[2025-02-04T03:40:00.823Z] info: Connected to MongoDB
+[2025-02-04T04:41:30.731Z] info: API is running on port 5000
+[2025-02-04T04:42:01.226Z] error: Error connecting to MongoDB:
+[2025-02-04T04:42:11.218Z] info: API is running on port 5000
+[2025-02-04T04:42:42.378Z] error: Error connecting to MongoDB:
+[2025-02-04T08:01:29.717Z] info: API is running on port 5000
+[2025-02-04T08:01:32.375Z] info: Connected to MongoDB
+[2025-02-04T08:25:47.018Z] info: API is running on port 5000
+[2025-02-04T08:25:51.270Z] info: Connected to MongoDB
