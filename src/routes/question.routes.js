@@ -5,16 +5,20 @@ const Question = require('../models/question.model');
 const { protect, admin } = require('../middleware/auth.middleware');
 
 // Get all questions (admin only)
-router.get('/', protect, admin, async (req, res) => {
+router.get('/admin', protect, admin, async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const questions = await Question.find().populate('createdBy', 'name email');
+    res.json({ success: true, data: questions });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Server error, please try again later.' });
+  }
+});
 
-    const questions = await Question.find()
-      .populate('createdBy', 'name email')
-      .skip((page - 1) * limit)
-      .limit(limit);
-
+// Get all questions for the user exam portal (No authentication required)
+router.get('/user', async (req, res) => {
+  try {
+    const questions = await Question.find();
     res.json({ success: true, data: questions });
   } catch (err) {
     console.error(err);
@@ -25,7 +29,7 @@ router.get('/', protect, admin, async (req, res) => {
 // Create new question (admin only)
 router.post('/', protect, admin, async (req, res) => {
   try {
-    const { section, text, options, answer, testCases } = req.body;
+    const { section, text, options, answer, testCases, questionNumber } = req.body;
 
     if (!text) {
       return res.status(400).json({ success: false, message: 'Question text is required.' });
@@ -40,10 +44,8 @@ router.post('/', protect, admin, async (req, res) => {
       }
     }
 
-    if (section === 'coding') {
-      if (!testCases || testCases.length === 0) {
-        return res.status(400).json({ success: false, message: 'At least one test case is required for coding questions.' });
-      }
+    if (section === 'coding' && (!testCases || testCases.length === 0)) {
+      return res.status(400).json({ success: false, message: 'At least one test case is required for coding questions.' });
     }
 
     const question = new Question({
@@ -84,10 +86,8 @@ router.put('/:id', protect, admin, async (req, res) => {
       }
     }
 
-    if (section === 'coding' && testCases) {
-      if (testCases.length === 0) {
-        return res.status(400).json({ success: false, message: 'At least one test case is required for coding questions.' });
-      }
+    if (section === 'coding' && testCases && testCases.length === 0) {
+      return res.status(400).json({ success: false, message: 'At least one test case is required for coding questions.' });
     }
 
     Object.assign(question, req.body);

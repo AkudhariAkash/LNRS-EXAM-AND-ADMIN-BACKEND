@@ -311,3 +311,312 @@
 [2025-02-04T08:01:32.375Z] info: Connected to MongoDB
 [2025-02-04T08:25:47.018Z] info: API is running on port 5000
 [2025-02-04T08:25:51.270Z] info: Connected to MongoDB
+[2025-02-04T09:16:28.723Z] info: API is running on port 5000
+[2025-02-04T09:16:29.337Z] info: Connected to MongoDB
+[2025-02-04T10:54:45.421Z] info: API is running on port 5000
+[2025-02-04T10:54:45.935Z] info: Connected to MongoDB
+[2025-02-04T12:08:32.679Z] info: API is running on port 5000
+[2025-02-04T12:08:33.422Z] info: Connected to MongoDB
+[2025-02-05T11:36:13.019Z] info: API is running on port 5000
+[2025-02-05T11:36:13.728Z] info: Connected to MongoDB
+[2025-02-06T04:27:32.321Z] info: API is running on port 5000
+[2025-02-06T04:27:35.909Z] info: Connected to MongoDB
+[2025-02-06T08:11:12.193Z] info: API is running on port 5000
+[2025-02-06T08:11:12.816Z] info: Connected to MongoDB
+[2025-02-06T12:02:54.964Z] info: API is running on port 5000
+[2025-02-06T12:02:55.691Z] info: Connected to MongoDB
+[2025-02-07T10:00:33.770Z] info: API is running on port 5000
+[2025-02-07T10:00:34.395Z] info: Connected to MongoDB
+[2025-02-07T10:18:52.179Z] info: API is running on port 5000
+[2025-02-07T10:18:53.173Z] info: Connected to MongoDB
+[2025-02-07T17:54:14.983Z] info: API is running on port 5000
+[2025-02-07T17:54:21.519Z] info: Connected to MongoDB
+[2025-02-07T18:02:31.822Z] info: API is running on port 5000
+[2025-02-07T18:02:35.431Z] info: Connected to MongoDB
+[2025-02-07T18:03:56.102Z] info: API is running on port 5000
+[2025-02-07T18:04:00.682Z] info: Connected to MongoDB
+[2025-02-07T18:28:46.722Z] info: API is running on port 5000
+[2025-02-07T18:28:48.971Z] info: Connected to MongoDB
+[2025-02-07T18:52:55.588Z] info: API is running on port 5000
+[2025-02-07T18:52:57.322Z] info: Connected to MongoDB
+[2025-02-07T19:19:20.818Z] info: API is running on port 5000
+[2025-02-07T19:19:22.666Z] info: Connected to MongoDB
+[2025-02-09T11:50:47.561Z] info: API is running on port 5000
+[2025-02-09T11:50:50.872Z] info: Connected to MongoDB
+[2025-02-09T18:28:37.142Z] info: API is running on port 5000
+[2025-02-09T18:28:42.174Z] info: Connected to MongoDB
+[2025-02-09T20:26:32.241Z] info: API is running on port 5000
+[2025-02-09T20:26:35.425Z] info: Connected to MongoDB
+[2025-02-09T20:33:01.464Z] error: SyntaxError: Expected property name or '}' in JSON at position 7 (line 2 column 5)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[2025-02-10T04:07:16.632Z] info: API is running on port 5000
+[2025-02-10T04:07:17.858Z] info: Connected to MongoDB
+[2025-02-10T08:21:06.475Z] error: SyntaxError: Expected property name or '}' in JSON at position 7 (line 2 column 5)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[2025-02-10T08:21:11.366Z] error: SyntaxError: Expected property name or '}' in JSON at position 7 (line 2 column 5)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[2025-02-10T08:21:12.865Z] error: SyntaxError: Expected property name or '}' in JSON at position 7 (line 2 column 5)
+    at JSON.parse (<anonymous>)
+    at parse (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:238:16)
+    at done (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+[2025-02-10T08:21:49.478Z] info: API is running on port 5000
+[2025-02-10T08:21:55.675Z] info: Connected to MongoDB
+[2025-02-10T09:31:16.535Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:31:18.269Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:31:20.305Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:31:22.450Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:31:24.666Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:31:26.670Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:49:51.558Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:49:53.258Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:49:55.315Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:49:57.665Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:49:59.739Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:50:01.471Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.780Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.792Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.796Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.806Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.896Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:55:09.901Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T09:58:35.017Z] error: Error: File must be a video.
+    at fileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\src\routes\exam.routes.js:23:17)
+    at wrappedFileFilter (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\index.js:44:7)
+    at Multipart.<anonymous> (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\multer\lib\make-middleware.js:107:7)
+    at Multipart.emit (node:events:524:28)
+    at HeaderParser.cb (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:358:14)
+    at HeaderParser.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:162:20)
+    at SBMH.ssCb [as _cb] (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:394:37)
+    at feed (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:248:10)
+    at SBMH.push (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\streamsearch\lib\sbmh.js:104:16)
+    at Multipart._write (C:\Users\akash\OneDrive\Desktop\imp files\project\node_modules\busboy\lib\types\multipart.js:567:19)
+[2025-02-10T17:31:53.694Z] info: API is running on port 5000
+[2025-02-10T17:31:55.732Z] info: Connected to MongoDB
+[2025-02-11T08:38:21.965Z] info: API is running on port 5000
+[2025-02-11T08:38:22.444Z] info: Connected to MongoDB
+[2025-02-12T02:59:10.596Z] info: API is running on port 5000
+[2025-02-12T02:59:11.645Z] info: Connected to MongoDB
+[2025-02-12T03:24:27.008Z] info: API is running on port 5000
+[2025-02-12T03:24:28.273Z] info: Connected to MongoDB
+[2025-02-12T03:33:52.348Z] info: API is running on port 5000
+[2025-02-12T03:33:53.385Z] info: Connected to MongoDB
+[2025-02-12T03:35:48.148Z] info: API is running on port 5000
+[2025-02-12T03:35:49.152Z] info: Connected to MongoDB
+[2025-02-12T03:37:22.731Z] info: API is running on port 5000
+[2025-02-12T03:37:23.807Z] info: Connected to MongoDB
+[2025-02-12T03:39:31.823Z] info: API is running on port 5000
+[2025-02-12T03:39:32.850Z] info: Connected to MongoDB

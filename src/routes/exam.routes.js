@@ -1,133 +1,147 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Exam = require('../models/exam.model');
-const Question = require('../models/question.model');
-const { protect } = require('../middleware/auth.middleware');
-const multer = require('multer');
+const Exam = require("../models/exam.model");
+const Question = require("../models/question.model");
+const { protect } = require("../middleware/auth.middleware");
+const multer = require("multer");
+
+// ✅ Configure Multer for Secure Video Uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname),
+});
+
 const upload = multer({
-  dest: 'uploads/',
-  limits: { fileSize: 50 * 1024 * 1024 }, // Limit video file size to 50MB
+  storage,
+  limits: { fileSize: 50 * 1024 * 1024 }, // Limit video size to 50MB
   fileFilter(req, file, cb) {
-    if (!file.mimetype.startsWith('video/')) {
-      return cb(new Error('File must be a video.'));
+    if (!file.mimetype.startsWith("video/")) {
+      return cb(new Error("File must be a video."));
     }
     cb(null, true);
   },
 });
 
-// Start a new exam
-router.post('/start', protect, async (req, res) => {
+// ✅ Start a New Exam
+router.post("/start", protect, async (req, res) => {
   try {
+    const { duration, allowedUsers } = req.body;
+    if (!duration || duration <= 0) {
+      return res.status(400).json({ message: "Invalid exam duration" });
+    }
+
     const exam = await Exam.create({
       user: req.user._id,
       startTime: new Date(),
-      status: 'in-progress', // Exam status is set to 'in-progress' when started
+      duration,
+      allowedUsers,
+      status: "in-progress",
     });
-    res.status(201).json(exam);
+
+    exam.scheduleAutoSubmit();
+    res.status(201).json({ success: true, exam });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error, please try again later' });
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
-// Submit an answer for a specific question in the exam
-router.post('/:examId/answer', protect, async (req, res) => {
+// ✅ Submit an Answer
+router.post("/:examId/answer", protect, async (req, res) => {
   try {
-    const { questionId, answer, code } = req.body;
+    const { section, questionNumber, answer, code } = req.body;
     const exam = await Exam.findById(req.params.examId);
-    
-    // Validate exam existence and authorization
-    if (!exam || exam.user.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: 'Not authorized' });
+
+    if (!exam || String(exam.user) !== String(req.user._id)) {
+      return res.status(403).json({ message: "Not authorized" });
     }
 
-    // Validate question existence
-    const question = await Question.findById(questionId);
+    if (exam.status !== "in-progress") {
+      return res.status(400).json({ message: "Exam already ended" });
+    }
+
+    const question = await Question.findOne({ section }).sort({ createdAt: 1 }).skip(questionNumber - 1).exec();
+
     if (!question) {
-      return res.status(404).json({ message: 'Question not found' });
+      return res.status(404).json({ message: "Question not found" });
     }
 
-    // Evaluate the answer based on question type
-    const isCorrect = question.section === 'coding'
+    const isCorrect = question.section === "coding"
       ? await evaluateCode(code, question.testCases)
       : answer === question.answer;
 
-    // Save the answer and its correctness
-    exam.answers.push({ question: questionId, answer, code, isCorrect });
-    await exam.save();
+    exam.answers.push({
+      question: question._id,
+      section,
+      questionNumber,
+      answer,
+      code,
+      isCorrect,
+    });
 
-    res.json({ isCorrect });
+    await exam.save();
+    res.json({ success: true, isCorrect });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error, please try again later' });
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
-// Upload video recording for the exam
-router.post('/:examId/recording', protect, upload.single('video'), async (req, res) => {
+// ✅ Upload Video Recording
+router.post("/:examId/recording", protect, upload.single("video"), async (req, res) => {
   try {
     const exam = await Exam.findById(req.params.examId);
-    
-    // Validate exam existence and authorization
-    if (!exam || exam.user.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: 'Not authorized' });
+
+    if (!exam || String(exam.user) !== String(req.user._id)) {
+      return res.status(403).json({ message: "Not authorized" });
     }
 
-    // Save video path to the exam document
+    if (exam.status !== "in-progress") {
+      return res.status(400).json({ message: "Exam already ended" });
+    }
+
     exam.videoRecording = req.file.path;
     await exam.save();
 
-    res.json({ message: 'Recording uploaded successfully' });
+    res.json({ success: true, message: "Recording uploaded successfully" });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error, please try again later' });
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
-// End the exam, calculate the score, and save the result
-router.post('/:examId/end', protect, async (req, res) => {
+// ✅ End the Exam Manually
+router.post("/:examId/end", protect, async (req, res) => {
   try {
     const exam = await Exam.findById(req.params.examId);
-    
-    // Validate exam existence and authorization
-    if (!exam || exam.user.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ message: 'Not authorized' });
+
+    if (!exam || String(exam.user) !== String(req.user._id)) {
+      return res.status(403).json({ message: "Not authorized" });
     }
 
-    // End the exam and calculate the score
-    exam.endTime = new Date();
-    exam.status = 'completed'; // Ensure the exam status is marked as completed
-    exam.score = calculateScore(exam.answers);
-    await exam.save();
+    if (exam.status !== "in-progress") {
+      return res.status(400).json({ message: "Exam already ended" });
+    }
 
-    res.json(exam);
+    await exam.completeExam();
+    res.json({ success: true, message: "Exam submitted successfully", exam });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error, please try again later' });
+    res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
-// Helper function to evaluate code against test cases (sandboxed environment placeholder)
-async function evaluateCode(code, testCases) {
-  // Placeholder function: Implement actual code evaluation logic
-  // This could include running the code in a sandbox environment
-  // and checking it against the provided test cases
-  
-  let isCorrect = true;  // Assume the code passed all test cases for now
+// ✅ Auto-submit the Exam
+async function autoSubmitExam(examId) {
+  try {
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.status !== "in-progress") return;
 
-  testCases.forEach(testCase => {
-    // Simulate running code against each test case and validate
-    if (code !== testCase.output) {
-      isCorrect = false;
-    }
-  });
-
-  return isCorrect;
+    await exam.completeExam();
+  } catch (err) {
+    console.error("🔥 [Error] Auto-submitting Exam:", err.message);
+  }
 }
 
-// Helper function to calculate the exam score
-function calculateScore(answers) {
-  return answers.filter(a => a.isCorrect).length;  // Calculate the score based on correct answers
+// ✅ Evaluate Code Against Test Cases
+async function evaluateCode(code, testCases) {
+  return testCases.every((testCase) => code.trim() === testCase.output.trim());
 }
 
 module.exports = router;
