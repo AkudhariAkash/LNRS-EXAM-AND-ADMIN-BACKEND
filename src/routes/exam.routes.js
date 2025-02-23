@@ -1,9 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
 const Exam = require("../models/exam.model");
 const Question = require("../models/question.model");
-const { protect } = require("../middleware/auth.middleware");
+const { protect, admin } = require("../middleware/auth.middleware");
 const multer = require("multer");
+
+// ✅ Ensure Upload Directory Exists
+const uploadDir = path.join(__dirname, "../uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
 
 // ✅ Configure Multer for Secure Video Uploads
 const storage = multer.diskStorage({
@@ -41,7 +50,8 @@ router.post("/start", protect, async (req, res) => {
     exam.scheduleAutoSubmit();
     res.status(201).json({ success: true, exam });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error starting exam:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
   }
 });
 
@@ -65,23 +75,34 @@ router.post("/:examId/answer", protect, async (req, res) => {
       return res.status(404).json({ message: "Question not found" });
     }
 
-    const isCorrect = question.section === "coding"
-      ? await evaluateCode(code, question.testCases)
-      : answer === question.answer;
+    if (question.section === "coding") {
+      const { isCorrect, totalTestCases, testCasesPassed } = await evaluateCode(code, question.testCases);
 
-    exam.answers.push({
-      question: question._id,
-      section,
-      questionNumber,
-      answer,
-      code,
-      isCorrect,
-    });
+      exam.answers.push({
+        question: question._id,
+        section,
+        questionNumber,
+        answer,
+        code,
+        isCorrect,
+        totalTestCases,
+        testCasesPassed,
+      });
+    } else {
+      exam.answers.push({
+        question: question._id,
+        section,
+        questionNumber,
+        answer,
+        isCorrect: answer === question.answer,
+      });
+    }
 
     await exam.save();
-    res.json({ success: true, isCorrect });
+    res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error submitting answer:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
   }
 });
 
@@ -98,12 +119,22 @@ router.post("/:examId/recording", protect, upload.single("video"), async (req, r
       return res.status(400).json({ message: "Exam already ended" });
     }
 
-    exam.videoRecording = req.file.path;
+    if (!req.file) {
+      return res.status(400).json({ message: "No video uploaded" });
+    }
+
+    const filePath = req.file.path;
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ message: "Uploaded file not found" });
+    }
+
+    exam.videoRecording = filePath;
     await exam.save();
 
     res.json({ success: true, message: "Recording uploaded successfully" });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error uploading recording:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
   }
 });
 
@@ -112,7 +143,11 @@ router.post("/:examId/end", protect, async (req, res) => {
   try {
     const exam = await Exam.findById(req.params.examId);
 
-    if (!exam || String(exam.user) !== String(req.user._id)) {
+    if (!exam) {
+      return res.status(404).json({ message: "Exam not found" });
+    }
+
+    if (String(exam.user) !== String(req.user._id)) {
       return res.status(403).json({ message: "Not authorized" });
     }
 
@@ -120,10 +155,53 @@ router.post("/:examId/end", protect, async (req, res) => {
       return res.status(400).json({ message: "Exam already ended" });
     }
 
+    if (!exam.videoRecording) {
+      exam.videoRecording = null;
+    }
+
     await exam.completeExam();
     res.json({ success: true, message: "Exam submitted successfully", exam });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Server error" });
+    console.error("Error ending exam:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
+  }
+});
+
+// ✅ Admin: View User Responses
+router.get("/:examId/submissions", protect, admin, async (req, res) => {
+  try {
+    const exam = await Exam.findById(req.params.examId).populate({
+      path: "answers.question",
+      select: "text options answer section",
+    });
+
+    if (!exam) {
+      return res.status(404).json({ message: "Exam not found" });
+    }
+
+    res.json({ success: true, responses: exam.answers });
+  } catch (err) {
+    console.error("Error fetching submissions:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
+  }
+});
+
+// ✅ Piston Compiler Route
+router.post("/compile", protect, async (req, res) => {
+  try {
+    const { code, language, stdin } = req.body;
+
+    const response = await axios.post("https://emkc.org/api/v2/piston/execute", {
+      language: language.toLowerCase(),
+      version: "*",
+      files: [{ content: code }],
+      stdin: stdin || "",
+    });
+
+    res.json({ success: true, output: response.data.run.output });
+  } catch (err) {
+    console.error("Error compiling code:", err);
+    res.status(500).json({ success: false, message: "Server error", error: err.message });
   }
 });
 
@@ -133,6 +211,10 @@ async function autoSubmitExam(examId) {
     const exam = await Exam.findById(examId);
     if (!exam || exam.status !== "in-progress") return;
 
+    if (!exam.videoRecording) {
+      exam.videoRecording = null;
+    }
+
     await exam.completeExam();
   } catch (err) {
     console.error("🔥 [Error] Auto-submitting Exam:", err.message);
@@ -140,8 +222,45 @@ async function autoSubmitExam(examId) {
 }
 
 // ✅ Evaluate Code Against Test Cases
-async function evaluateCode(code, testCases) {
-  return testCases.every((testCase) => code.trim() === testCase.output.trim());
+async function evaluateCode(code, testCases, language = "python3") {
+  let passedTestCases = 0;
+
+  for (const testCase of testCases) {
+    try {
+      const response = await axios.post("https://emkc.org/api/v2/piston/execute", {
+        language: language.toLowerCase(),
+        version: "*",
+        files: [{ content: code }],
+        stdin: testCase.input || "",
+      });
+
+      const output = response.data.run.output.trim();
+      const expectedOutput = testCase.output.trim();
+
+      if (output === expectedOutput) {
+        passedTestCases += 1;
+      }
+    } catch (err) {
+      console.error("Error evaluating test case:", err);
+    }
+  }
+
+  return {
+    totalTestCases: testCases.length,
+    testCasesPassed: passedTestCases,
+    isCorrect: passedTestCases === testCases.length,
+  };
 }
+
+// ✅ Multer Error Handling
+router.use((err, req, res, next) => {
+  if (err instanceof multer.MulterError) {
+    return res.status(400).json({ success: false, message: err.message });
+  } else if (err) {
+    console.error("Unhandled Error:", err);
+    return res.status(500).json({ success: false, message: "Server error", error: err.message });
+  }
+  next();
+});
 
 module.exports = router;

@@ -2014,3 +2014,130 @@
 [2025-02-18T15:19:00.101Z] info: ✅ MongoDB connected successfully!
 [2025-02-18T17:26:05.584Z] info: 🚀 Server running on port 5000
 [2025-02-18T17:26:09.887Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T08:17:41.619Z] info: 🚀 Server running on port 5000
+[2025-02-19T08:17:49.162Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T17:35:06.500Z] info: 🚀 Server running on port 5000
+[2025-02-19T17:35:12.353Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T17:41:38.941Z] info: 🚀 Server running on port 5000
+[2025-02-19T17:41:41.707Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T18:06:05.055Z] info: 🚀 Server running on port 5000
+[2025-02-19T18:06:09.408Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T18:06:42.088Z] info: 🚀 Server running on port 5000
+[2025-02-19T18:06:44.285Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T18:19:32.193Z] info: 🚀 Server running on port 5000
+[2025-02-19T18:19:32.929Z] info: ✅ MongoDB connected successfully!
+[2025-02-19T19:00:43.725Z] error: 🔥 ERROR: Error: ENOENT: no such file or directory, open 'C:\Users\akash\OneDrive\Desktop\imp files\project\uploads\1739991643718-recording.webm'
+[2025-02-19T19:00:50.035Z] error: 🔥 ERROR: Error: ENOENT: no such file or directory, open 'C:\Users\akash\OneDrive\Desktop\imp files\project\uploads\1739991650033-recording.webm'
+[2025-02-20T03:49:40.845Z] info: 🚀 Server running on port 5000
+[2025-02-20T03:49:41.972Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T06:21:36.243Z] info: 🚀 Server running on port 5000
+[2025-02-20T06:21:37.687Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T08:39:34.801Z] info: 🚀 Server running on port 5000
+[2025-02-20T08:39:35.463Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T08:56:34.383Z] error: 🔥 ERROR: Error: ENOENT: no such file or directory, open 'C:\Users\akash\OneDrive\Desktop\imp files\project\uploads\1740041794377-recording.webm'
+[2025-02-20T08:56:40.424Z] error: 🔥 ERROR: Error: ENOENT: no such file or directory, open 'C:\Users\akash\OneDrive\Desktop\imp files\project\uploads\1740041800422-recording.webm'
+[2025-02-20T09:09:57.374Z] info: 🚀 Server running on port 5000
+[2025-02-20T09:09:58.006Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T09:41:48.190Z] info: 🚀 Server running on port 5000
+[2025-02-20T09:41:49.051Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T09:45:33.152Z] info: 🚀 Server running on port 5000
+[2025-02-20T09:45:34.988Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T10:51:14.800Z] info: 🚀 Server running on port 5000
+[2025-02-20T10:51:19.842Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T18:28:26.740Z] error: 🚨 Unhandled Rejection:
+[2025-02-20T19:01:28.632Z] info: 🚀 Server running on port 5000
+[2025-02-20T19:01:30.430Z] info: ✅ MongoDB connected successfully!
+[2025-02-20T20:01:54.053Z] error: 🚨 Unhandled Rejection:
+[2025-02-20T20:02:39.309Z] info: 🚀 Server running on port 5000
+[2025-02-20T20:02:43.514Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T02:49:34.102Z] info: 🚀 Server running on port 5000
+[2025-02-21T02:50:08.386Z] error: ❌ MongoDB connection failed:
+[2025-02-21T02:50:56.911Z] info: 🚀 Server running on port 5000
+[2025-02-21T02:51:43.197Z] error: ❌ MongoDB connection failed:
+[2025-02-21T02:54:21.108Z] info: 🚀 Server running on port 5000
+[2025-02-21T02:54:51.252Z] error: ❌ MongoDB connection failed:
+[2025-02-21T02:55:56.791Z] info: 🚀 Server running on port 5000
+[2025-02-21T02:56:29.014Z] error: ❌ MongoDB connection failed:
+[2025-02-21T02:56:44.885Z] info: 🚀 Server running on port 5000
+[2025-02-21T02:56:47.966Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T03:47:31.781Z] error: 🚨 Unhandled Rejection:
+[2025-02-21T07:30:14.997Z] info: 🚀 Server running on port 5000
+[2025-02-21T07:30:19.042Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T07:36:43.820Z] error: 🚨 Unhandled Rejection:
+[2025-02-21T07:44:37.952Z] info: 🚀 Server running on port 5000
+[2025-02-21T07:44:41.103Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T08:08:50.205Z] info: 🚀 Server running on port 5000
+[2025-02-21T08:08:52.090Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T08:10:30.301Z] info: 🚀 Server running on port 5000
+[2025-02-21T08:10:31.895Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T08:33:21.472Z] info: 🚀 Server running on port 5000
+[2025-02-21T08:33:24.107Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T08:52:03.638Z] info: 🚀 Server running on port 5000
+[2025-02-21T08:52:05.689Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T08:56:12.099Z] info: 🚀 Server running on port 5000
+[2025-02-21T08:56:13.612Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:02:03.843Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:02:07.180Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:07:42.763Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:07:45.090Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:11:41.309Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:11:43.951Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:40:05.335Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:40:07.892Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:48:00.420Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:48:01.855Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T09:55:01.014Z] info: 🚀 Server running on port 5000
+[2025-02-21T09:55:01.722Z] info: ✅ MongoDB connected successfully!
+[2025-02-21T10:54:19.426Z] info: 🚀 Server running on port 5000
+[2025-02-21T10:54:20.283Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T12:16:24.366Z] info: 🚀 Server running on port 5000
+[2025-02-22T12:16:25.969Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T12:41:55.433Z] info: 🚀 Server running on port 5000
+[2025-02-22T12:41:56.571Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T12:55:34.247Z] info: 🚀 Server running on port 5000
+[2025-02-22T12:55:38.068Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T13:24:47.454Z] info: 🚀 Server running on port 5000
+[2025-02-22T13:24:48.602Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T13:39:06.569Z] info: 🚀 Server running on port 5000
+[2025-02-22T13:39:07.573Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T13:41:49.143Z] info: 🚀 Server running on port 5000
+[2025-02-22T13:41:50.219Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:06:00.546Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:06:01.673Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:06:54.017Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:09:04.790Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:09:05.741Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:14:58.881Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:14:59.976Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:29:20.084Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:29:25.974Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:34:27.297Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:34:45.415Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T14:40:39.641Z] info: 🚀 Server running on port 5000
+[2025-02-22T14:40:43.803Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T15:08:48.235Z] info: 🚀 Server running on port 5000
+[2025-02-22T15:08:52.331Z] info: ✅ MongoDB connected successfully!
+[2025-02-22T15:40:28.426Z] info: 🚀 Server running on port 5000
+[2025-02-22T15:40:30.592Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T14:24:24.225Z] info: 🚀 Server running on port 5000
+[2025-02-23T14:25:18.705Z] error: ❌ MongoDB connection failed:
+[2025-02-23T14:28:13.742Z] info: 🚀 Server running on port 5000
+[2025-02-23T14:28:18.583Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:05:42.954Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:05:46.256Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:20:00.836Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:20:03.818Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:47:33.348Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:47:38.268Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:57:29.278Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:57:31.143Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:57:59.591Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:58:01.251Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T15:58:10.603Z] info: 🚀 Server running on port 5000
+[2025-02-23T15:58:11.350Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T16:00:10.653Z] info: 🚀 Server running on port 5000
+[2025-02-23T16:00:13.590Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T16:01:20.302Z] info: 🚀 Server running on port 5000
+[2025-02-23T16:01:22.955Z] info: ✅ MongoDB connected successfully!
+[2025-02-23T17:19:37.233Z] info: 🚀 Server running on port 5000
+[2025-02-23T17:19:39.135Z] info: ✅ MongoDB connected successfully!
