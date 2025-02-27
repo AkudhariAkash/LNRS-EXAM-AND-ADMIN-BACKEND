@@ -4,6 +4,15 @@ const mongoose = require('mongoose');
 const Question = require('../models/question.model');
 const { protect, admin } = require('../middleware/auth.middleware');
 
+// Utility function to shuffle array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 // Get all questions (admin only)
 router.get('/admin', protect, admin, async (req, res) => {
   try {
@@ -18,7 +27,14 @@ router.get('/admin', protect, admin, async (req, res) => {
 // Get all questions for the user exam portal (No authentication required)
 router.get('/user', async (req, res) => {
   try {
-    const questions = await Question.find();
+    const sections = ['mcqs', 'aptitude', 'ai', 'coding'];
+    const questions = {};
+
+    for (const section of sections) {
+      const sectionQuestions = await Question.find({ section }).sort({ questionNumber: 1 });
+      questions[section] = shuffleArray(sectionQuestions);
+    }
+
     res.json({ success: true, data: questions });
   } catch (err) {
     console.error(err);
