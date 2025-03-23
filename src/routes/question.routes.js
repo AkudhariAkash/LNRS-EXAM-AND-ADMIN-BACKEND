@@ -4,15 +4,6 @@ const mongoose = require('mongoose');
 const Question = require('../models/question.model');
 const { protect, admin } = require('../middleware/auth.middleware');
 
-// Utility function to shuffle array
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
 // Get all questions (admin only)
 router.get('/admin', protect, admin, async (req, res) => {
   try {
@@ -31,8 +22,7 @@ router.get('/user', async (req, res) => {
     const questions = {};
 
     for (const section of sections) {
-      const sectionQuestions = await Question.find({ section }).sort({ questionNumber: 1 });
-      questions[section] = shuffleArray(sectionQuestions);
+      questions[section] = await Question.find({ section }).sort({ questionNumber: 1 });
     }
 
     res.json({ success: true, data: questions });

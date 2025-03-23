@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
       unique: true,
       trim: true,
       lowercase: true,
-      index: true, // Ensures database-level uniqueness
+      index: true,
       match: [
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
         'Please provide a valid email address',
@@ -32,6 +32,8 @@ const userSchema = new mongoose.Schema(
       enum: ['admin', 'user'],
       default: 'user',
     },
+    isLoggedIn: { type: Boolean, default: false }, // Tracks if user is logged in
+    isBlocked: { type: Boolean, default: false }, // Blocks re-login after logout
   },
   { timestamps: true }
 );
@@ -44,20 +46,15 @@ userSchema.pre('save', function (next) {
   next();
 });
 
-// Instance method to compare passwords (plaintext comparison)
+// Compare passwords (plaintext)
 userSchema.methods.comparePassword = function (candidatePassword) {
-  try {
-    return this.password === candidatePassword; // Plaintext comparison
-  } catch (error) {
-    console.error('Error while comparing passwords:', error);
-    throw new Error('Error while comparing passwords');
-  }
+  return this.password === candidatePassword;
 };
 
-// Remove sensitive data (like password) before sending the user object
+// Remove sensitive data before sending response
 userSchema.methods.toJSON = function () {
   const userObject = this.toObject();
-  delete userObject.password; // Exclude password from the returned object
+  delete userObject.password;
   return userObject;
 };
 

@@ -20,79 +20,101 @@ router.post('/register', async (req, res) => {
 
     const user = await User.create({ name, email, password });
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
-
-    res.status(201).json({ token, message: 'User registered successfully' });
+    res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
     console.error('Register Error:', error);
     res.status(500).json({ message: 'Server error, please try again later' });
   }
 });
 
- // Login User
- router.post('/login', async (req, res) => {
-   try {
-     const { email, password } = req.body;
+// Login User
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-     if (!email || !password) {
-       return res.status(400).json({ message: 'Please provide both email and password' });
-     }
+    if (!email || !password) {
+      return res.status(400).json({ message: 'Please provide both email and password' });
+    }
 
-     const user = await User.findOne({ email });
-     if (!user || user.password !== password) {
-       return res.status(401).json({ message: 'Invalid credentials' });
-     }
+    const user = await User.findOne({ email });
 
-     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    if (!user || user.password !== password) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
 
-     res.json({ token, message: 'Login successful' });
-   } catch (error) {
-     console.error('Login Error:', error);
-     res.status(500).json({ message: 'Server error, please try again later' });
-   }
- });
+    if (user.role === 'user') {
+      if (user.isLoggedIn) {
+        return res.status(403).json({ message: 'User already Taken Exam' });
+      }
+      if (user.isBlocked) {
+        return res.status(403).json({ message: 'EXAM ALREADY TAKEN' });
+      }
+    }
 
- // Get Current User (Protected Route)
- router.get('/me', protect, async (req, res) => {
-   try {
-     res.json(req.user);
-   } catch (error) {
-     console.error('Get Current User Error:', error);
-     res.status(500).json({ message: 'Server error, please try again later' });
-   }
- });
+    user.isLoggedIn = true;
+    await user.save();
+
+    const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
+
+    res.json({ token, message: 'Login successful' });
+  } catch (error) {
+    console.error('Login Error:', error);
+    res.status(500).json({ message: 'Server error, please try again later' });
+  }
+});
+
+// Logout User
+router.post('/logout', protect, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(400).json({ message: 'User not found' });
+    }
+
+    if (user.role === 'admin') {
+      user.isLoggedIn = false; // Admins can log in again
+    } else {
+      user.isLoggedIn = false;
+      user.isBlocked = true; // Users cannot log in again
+    }
+
+    await user.save();
+
+    res.json({ message: 'Logout successful' });
+  } catch (error) {
+    console.error('Logout Error:', error);
+    res.status(500).json({ message: 'Server error, please try again later' });
+  }
+});
 
 // Create Admin
- router.post('/create-admin', async (req, res) => {
-   try {
-     const { name, email, password } = req.body;
+router.post('/create-admin', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
 
-     if (!name || !email || !password) {
-       return res.status(400).json({ message: 'Please provide all required fields' });
-     }
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: 'Please provide all required fields' });
+    }
 
-     const existingAdmin = await User.findOne({ email });
-     if (existingAdmin) {
-       return res.status(400).json({ message: 'Admin with this email already exists' });
-     }
+    const existingAdmin = await User.findOne({ email });
+    if (existingAdmin) {
+      return res.status(400).json({ message: 'Admin with this email already exists' });
+    }
 
-     const admin = await User.create({
-       name,
-       email,
-       password,
-       role: 'admin',
-     });
+    const admin = await User.create({
+      name,
+      email,
+      password,
+      role: 'admin',
+    });
 
-     const token = jwt.sign({ id: admin._id, role: admin.role }, process.env.JWT_SECRET, {
-       expiresIn: '1d',
-     });
-
-     res.status(201).json({ token, message: 'Admin created successfully' });
-   } catch (error) {
-     console.error('Create Admin Error:', error);
-     res.status(500).json({ message: 'Server error, please try again later' });
-   }
- });
+    res.status(201).json({ message: 'Admin created successfully' });
+  } catch (error) {
+    console.error('Create Admin Error:', error);
+    res.status(500).json({ message: 'Server error, please try again later' });
+  }
+});
 
 // Admin Login
 router.post('/admin-login', async (req, res) => {
@@ -108,9 +130,7 @@ router.post('/admin-login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid admin credentials' });
     }
 
-    const token = jwt.sign({ id: admin._id, role: admin.role }, process.env.JWT_SECRET, {
-      expiresIn: '1d',
-    });
+    const token = jwt.sign({ id: admin._id, role: admin.role }, process.env.JWT_SECRET, { expiresIn: '1d' });
 
     res.json({ token, message: 'Admin logged in successfully' });
   } catch (error) {
@@ -119,11 +139,21 @@ router.post('/admin-login', async (req, res) => {
   }
 });
 
-// Update user (Protected Route)
+// Get Current User
+router.get('/me', protect, async (req, res) => {
+  try {
+    res.json(req.user);
+  } catch (error) {
+    console.error('Get Current User Error:', error);
+    res.status(500).json({ message: 'Server error, please try again later' });
+  }
+});
+
+// Update User
 router.put('/update-user', protect, async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    const { userId } = req.user;
+    const { id } = req.user;
 
     if (!name && !email && !password) {
       return res.status(400).json({ message: 'No fields to update' });
@@ -132,9 +162,9 @@ router.put('/update-user', protect, async (req, res) => {
     const updatedFields = {};
     if (name) updatedFields.name = name;
     if (email) updatedFields.email = email;
-    if (password) updatedFields.password = password; // Plaintext password
+    if (password) updatedFields.password = password;
 
-    const updatedUser = await User.findByIdAndUpdate(userId, updatedFields, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(id, updatedFields, { new: true });
 
     res.json({ user: updatedUser, message: 'User updated successfully' });
   } catch (error) {
