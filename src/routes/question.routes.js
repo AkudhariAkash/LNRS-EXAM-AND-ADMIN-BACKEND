@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Question = require('../models/question.model');
 const { protect, admin } = require('../middleware/auth.middleware');
 
+
 // Get all questions (admin only)
 router.get('/admin', protect, admin, async (req, res) => {
   try {
